@@ -22,7 +22,8 @@ const sessionConfig = {
 };
 server.use(helmet());
 server.use(express.json());
-server.use(cors());
+server.use(cors({ credentials: true, origin: "https://1ngx9.csb.app" }));
+
 server.use(session(sessionConfig));
 
 server.use("/api/users", restricted, usersRouter);
